@@ -1,0 +1,12 @@
+[Unit]
+Description=wialon relay tcp server daemon
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/var/www/relay_tcp_server
+ExecStart=/var/www/relay_tcp_server/venv/bin/python /var/www/relay_tcp_server/server.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
